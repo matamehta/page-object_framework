@@ -46,8 +46,9 @@ jobs:
           command: |
             mkdir /tmp/test-results
           #  TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)"
-            
-         rake features
+           bundle update 
+           rake features
+           $TEST_FILES
                          
 
       # collect reports
